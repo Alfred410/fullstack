@@ -14,6 +14,8 @@ client.connect();
 
 const app = express();
 
+app.use(express.json());
+
 const createTable = async () => {
   await client.query(`
     CREATE TABLE IF NOT EXISTS todos (
