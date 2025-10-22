@@ -47,7 +47,7 @@ function App() {
       <div className="bg-white text-black">
         <h1 className="text-black">ToDo List</h1>
 
-        <div>
+        <div className="flex gap-5">
           <input
             type="text"
             value={newTodo}
@@ -58,7 +58,7 @@ function App() {
         </div>
         <ul>
           {todos.map((todo, todoIndex) => (
-            <li key={todoIndex}>
+            <li key={todoIndex} className="flex gap-3">
               <div>
                 <input
                   type="checkbox"
@@ -67,7 +67,12 @@ function App() {
                 />
               </div>
               <span>{todo.title}</span>
-              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+              <button
+                onClick={() => deleteTodo(todo.id)}
+                className="bg-red-600 text-black"
+              >
+                x
+              </button>
             </li>
           ))}
         </ul>
