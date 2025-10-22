@@ -44,8 +44,8 @@ function App() {
 
   return (
     <>
-      <div className="bg-white text-black">
-        <h1 className="text-black">ToDo List</h1>
+      <div className="bg-white p-3">
+        <h1 className="text-black mb-3">ToDo List</h1>
 
         <div className="flex gap-5">
           <input
@@ -53,24 +53,23 @@ function App() {
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
             placeholder="Add task"
+            className="border text-black"
           />
           <button onClick={addTodo}>Add</button>
         </div>
         <ul>
           {todos.map((todo, todoIndex) => (
-            <li key={todoIndex} className="flex gap-3">
-              <div>
+            <li key={todoIndex} className="flex justify-between gap-3">
+              <div className="flex">
                 <input
                   type="checkbox"
                   checked={todo.completed}
                   onChange={() => toggleTodo(todo.id, todo.completed)}
                 />
+
+                <span>{todo.title}</span>
               </div>
-              <span>{todo.title}</span>
-              <button
-                onClick={() => deleteTodo(todo.id)}
-                className="bg-red-600 text-black"
-              >
+              <button onClick={() => deleteTodo(todo.id)} className="bg-red">
                 x
               </button>
             </li>
