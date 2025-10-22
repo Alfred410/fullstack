@@ -15,7 +15,7 @@ function App() {
     if (!newTodo.trim()) return;
     await fetch(`/todos`, {
       method: "POST",
-      headers: { "Content-Type": "appication/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: newTodo }),
     });
     setNewTodo("");
@@ -25,7 +25,7 @@ function App() {
   const toggleTodo = async (id, completed) => {
     await fetch(`/todos/${id}`, {
       method: "PUT",
-      headers: { "Content-Type": "appication/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ completed: !completed }),
     });
     fetchTodo();
@@ -59,7 +59,6 @@ function App() {
         <ul>
           {todos.map((todo, todoIndex) => (
             <li key={todoIndex}>
-              {todo}
               <div>
                 <input
                   type="checkbox"
