@@ -67,7 +67,7 @@ function App() {
                   onChange={() => toggleTodo(todo.id, todo.completed)}
                 />
 
-                <span>{todo.title}</span>
+                <span className="text-black">{todo.title}</span>
               </div>
               <button onClick={() => deleteTodo(todo.id)} className="bg-red">
                 x
