@@ -29,7 +29,7 @@ const createTable = async () => {
 createTable();
 
 app.get("/todos", async (_request, response) => {
-  const result = await client.query("SELECT * FROM todos");
+  const result = await client.query("SELECT * FROM todos ORDER BY id ASC");
   response.json(result.rows);
 });
 
